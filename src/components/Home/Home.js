@@ -1,45 +1,52 @@
 import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import './Home.css';
+import bannerone from '../../images/banners/banner1_1280x500.jpg'
+import bannertwo from '../../images/banners/banner2_1280x500.jpg'
+import bannerthree from '../../images/banners/banner3_1280x500.jpg'
 const Home = () => {
   return (
     <div id='home'>
       <section className='banner'>
         <Container fluid>
-          <Carousel>
+          <Carousel variant="light">
             <Carousel.Item>
               <img
-                className="d-block w-100"
-                src="https://images.unsplash.com/photo-1501901609772-df0848060b33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMjI2MzE0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                className="d-block banner-img"
+                width='100%'
+                height={500}
+                src={bannerone}
                 alt="First slide"
               />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <Carousel.Caption className="captions" >
+                <h5>Keep your memories safe</h5>
+                <p>We are here to save your memories with high quality and best pictures.Pictures are told the mirrors of past</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
-                className="d-block w-100"
-                src="holder.js/800x400?text=Second slide&bg=282c34"
+                className="d-block banner-img"
+                width='100%'
+                height={500}
+                src={bannertwo}
                 alt="Second slide"
               />
-
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <Carousel.Caption className="captions" >
+                <h5>Sweet memories of Birthday</h5>
+                <p>Do you want to keep sweet memories with your friends on your birthday? We are here to serve you.</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
-                className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
+                className="d-block banner-img"
+                width='100%'
+                height={500}
+                src={bannerthree}
                 alt="Third slide"
               />
-
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <Carousel.Caption className="captions" >
+                <h5>Make your business event Unique</h5>
+                <p>We will make your business event memorable with hd photos and videos. So, What are your waiting for?</p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

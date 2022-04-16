@@ -1,0 +1,13 @@
+.captions{
+    margin-bottom: 3%;
+    
+}
+.captions h3{
+    color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width:576px) {
+    .banner-img{
+        height: 250px!important;
+    }
+}
