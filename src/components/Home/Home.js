@@ -1,10 +1,13 @@
 import React from 'react';
-import { Carousel, Container } from 'react-bootstrap';
+import { Carousel, Container, Row } from 'react-bootstrap';
 import './Home.css';
 import bannerone from '../../images/banners/banner1_1280x500.jpg'
 import bannertwo from '../../images/banners/banner2_1280x500.jpg'
 import bannerthree from '../../images/banners/banner3_1280x500.jpg'
+import useServices from '../../hooks/useServices';
+import Service from '../Service/Service';
 const Home = () => {
+  const [services, setServices] = useServices()
   return (
     <div id='home'>
       <section className='banner'>
@@ -50,6 +53,25 @@ const Home = () => {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
+        </Container>
+      </section>
+
+      <section id="services">
+      <Container>
+          <div className='main-container'>
+            <h3 className='text-center mt-5 mb-3'>Available Packages</h3>
+            <div>
+              <Row className='gy-5'>
+                {
+                  services.map(service => <Service
+                  key ={service.id}
+                  service = {service}
+                  >
+                  </Service>)
+                }
+              </Row>
+            </div>
+          </div>
         </Container>
       </section>
     </div>
