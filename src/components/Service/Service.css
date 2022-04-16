@@ -2,3 +2,40 @@
     text-align: start;
     color: rgb(1, 1, 31);
 }
+.card-style{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-style:hover{
+    background-color: rgba(255, 0, 0, 0.856);
+    transition: all 2s ease-in-out;
+    transform: scale(1.01);
+    transition: all 2s ease-out;
+    
+}
+.card-style:hover .card-body,.sign-icon{
+    color: white;
+    transition: all 2s ease-in;
+}
+.card-style:hover .sign-icon{
+    color: white;
+    transition: all 2s ease-in;
+}
+.sign-icon{
+    color: rgb(24, 32, 105);
+    margin-right: 5px;
+}
+.book-now{
+    border: 1px solid white;
+    background-color:rgb(22, 31, 78);
+    color: white;
+    padding: 8px 10px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-left: 35%;
+}
+.book-now:hover{
+    border:1px solid rgb(22, 31, 78);
+    background-color: white;
+    color: rgb(22, 31, 78);
+
+}

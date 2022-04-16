@@ -56,10 +56,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <section id="services">
+      <section id="services" className='services-section'>
       <Container>
           <div className='main-container'>
-            <h3 className='text-center mt-5 mb-3'>Available Packages</h3>
+            <h2 className='text-center mt-5 mb-3'>Available Packages</h2>
             <div>
               <Row className='gy-5'>
                 {

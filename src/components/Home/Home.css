@@ -8,6 +8,9 @@
 .captions h3{
     color: rgb(0, 0, 0);
 }
+.services-section{
+    margin-bottom: 100px;
+}
 
 @media screen and (max-width:576px) {
     .banner-img{
