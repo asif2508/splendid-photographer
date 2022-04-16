@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "plan": "Small events",
+        "desc": "Mostly for small events and parties like Birthdays, Class parties and Business events etc.",
+        "price": 199,
+        "service_1" : "Unlimited Photographs",
+        "service_2" : "Six hours service",
+        "service_3" : "Beautify photos",
+        "service_4" : "No videos ",
+        "service_5" : "Advanced payment",
+        "img" : ""
+
+    },
+    {
+        "id": 1,
+        "plan": "Medium events",
+        "desc": "Mostly for medium events like wedding, business fairs and family parties.",
+        "price": 399,
+        "service_1" : "Unlimited Photographs",
+        "service_2" : "Twenty-four hours service",
+        "service_3" : "Beautify photos",
+        "service_4" : "Capturing videos ",
+        "service_5" : "Per day payment",
+        "img" : ""
+
+    },
+    {
+        "id": 1,
+        "plan": "Large events",
+        "desc": "Mostly for small events and parties like wedding, tours and .",
+        "price": 599,
+        "service_1" : "Unlimited Photographs",
+        "service_2" : "Three days service",
+        "service_3" : "Beautify photos",
+        "service_4" : "Capturing videos ",
+        "service_5" : "Advanced payment",
+        "img": ""
+
+    }
+]
