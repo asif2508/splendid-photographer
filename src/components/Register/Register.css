@@ -1,0 +1,20 @@
+.register-page{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,26,121,0.9808298319327731) 1%, rgba(0,212,255,1) 100%);
+}
+.register-style{
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+.register-style h3{
+    color: rgb(37, 17, 104);
+}
+
+@media screen and (max-width: 576px) {
+    .register-style{
+        width: 100%;
+    }
+}

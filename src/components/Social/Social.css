@@ -1,6 +1,6 @@
 .logo-backgound{
     padding: 10px;
-    background-color: rgb(170, 26, 98);
+    background-color: rgb(37, 17, 104);
     color: white;
     border-radius: 50px;
     border: 1px solid white;
@@ -8,8 +8,8 @@
 }
 .logo-backgound:hover{
     background-color: white;
-    color:rgb(170, 26, 98);
-    border: 1px solid rgb(170, 26, 98);
+    color:rgb(37, 17, 104);
+    border: 1px solid rgb(37, 17, 104);
     cursor: pointer;
 }
 .logo-backgound:active{

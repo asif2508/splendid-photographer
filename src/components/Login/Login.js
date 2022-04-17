@@ -13,8 +13,8 @@ const Login = () => {
                     </Col>
                     <Col xs={12} md={5} lg={5}>
                         <div className="login-style">
-                            <h3 className='text-start'>Login</h3>
-                            <Form className='w-75'>
+                            <h3 className='text-center'>Login</h3>
+                            <Form className='w-75 mx-auto'>
                                 <Form.Floating className="mb-3">
                                     <Form.Control
                                         id="floatingInputCustom"
@@ -35,15 +35,16 @@ const Login = () => {
                                     <Form.Group className="" controlId="formBasicCheckbox">
                                         <Form.Check type="checkbox" label="Remember me" />
                                     </Form.Group>
-                                    <Button variant="link">Forgot Password</Button>
+                                    <Button className='link-style' variant="link">Forgot Password</Button>
                                 </div>
-                                <Button className variant="primary" type="submit">
-                                    Submit
+                                <Button className='login-btn' type="submit">
+                                    Login
                                 </Button>
+                                <p className='text-start'>Don't have an account? <Link className='link-style' to='/register'>Register Now</Link></p>
                             </Form>
-                            <p className='text-start'>Don't have an account? <Link to='/register'>Register Now</Link></p>
+                            <Social></Social>
                         </div>
-                        <Social></Social>
+                        
                     </Col>
                 </Row>
             </Container>
