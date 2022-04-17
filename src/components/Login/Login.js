@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import Social from '../Social/Social';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,10 +20,13 @@ const Login = () => {
       const emailRef = useRef('');
       const passwordRef = useRef('');
       const [message, setMessage] = useState('');
+      const [signInWithGoogle] = useSignInWithGoogle(auth);
+      const [signInWithTwitter] = useSignInWithTwitter(auth);
+      const [signInWithFacebook] = useSignInWithFacebook(auth);
 
       let location = useLocation();
       let from = location.state?.from?.pathname || "/";
-      if(loading){
+      if(loading ){
           return <Loading></Loading>
       }
       if(user){
@@ -48,6 +51,17 @@ const Login = () => {
             setMessage("Enter your email!");
         }
 
+    }
+    const handleSignInWithGoogle =()=>{
+        signInWithGoogle();
+    }
+    const handleSignInWithFacebook =()=>{
+        signInWithFacebook();
+        
+    }
+    const handleSignInWithTwitter =()=>{
+        signInWithTwitter();
+        
     }
     return (
         <div>
@@ -93,7 +107,11 @@ const Login = () => {
                                 </Button>
                                 <p className='text-start'>Don't have an account? <Link className='link-style' to='/register'>Register Now</Link></p>
                             </Form>
-                            <Social></Social>
+                            <Social
+                            handleSignInWithGoogle ={handleSignInWithGoogle}
+                            handleSignInWithFacebook ={handleSignInWithFacebook}
+                            handleSignInWithTwitter ={handleSignInWithTwitter}
+                            ></Social>
                             <ToastContainer />
                         </div>
                         

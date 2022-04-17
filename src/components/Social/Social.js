@@ -3,30 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {} from '@fortawesome/free-solid-svg-icons';
 import {  faFacebook, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './Social.css';
-import { useAuthState, useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
+import { useAuthState} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import Loading from '../Loading/Loading';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Social = () => {
-    const [signInWithGoogle, loading, error] = useSignInWithGoogle(auth);
-    const [signInWithTwitter, loading1, error1] = useSignInWithTwitter(auth);
-    const [signInWithFacebook, loading2, error2] = useSignInWithFacebook(auth);
+const Social = (props) => {
+    const {handleSignInWithGoogle, handleSignInWithFacebook, handleSignInWithTwitter} = props;
     const [user] = useAuthState(auth);
-    if (loading || loading1 || loading2) {
-        return <Loading></Loading>
-    }
-
-    const handleSignInWithGoogle =()=>{
-        signInWithGoogle();
-    }
-    const handleSignInWithFacebook =()=>{
-        signInWithFacebook();
-        
-    }
-    const handleSignInWithTwitter =()=>{
-        signInWithTwitter();
-        
+    const navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    if(user){
+        navigate(from, { replace: true });;
     }
     return (
         <div>
