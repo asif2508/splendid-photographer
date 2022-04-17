@@ -3,7 +3,7 @@ import React from 'react';
 const Login = () => {
     return (
         <div>
-           <h1>login page</h1> 
+           <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5425.jpg?size=338&ext=jpg" alt="" /> 
         </div>
     );
 };

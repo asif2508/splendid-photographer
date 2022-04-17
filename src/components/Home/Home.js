@@ -6,8 +6,11 @@ import bannertwo from '../../images/banners/banner2_1280x500.jpg'
 import bannerthree from '../../images/banners/banner3_1280x500.jpg'
 import useServices from '../../hooks/useServices';
 import Service from '../Service/Service';
+import useReviews from '../../hooks/useReviews';
+import Review from '../Review/Review';
 const Home = () => {
-  const [services, setServices] = useServices()
+  const [services] = useServices();
+  const [reviews] = useReviews();
   return (
     <div id='home'>
       <section className='banner mt-2'>
@@ -73,6 +76,22 @@ const Home = () => {
             </div>
           </div>
         </Container>
+      </section>
+
+      <section className="testimonials" id="testimonials">
+                <Container>
+                  <div className='testimonial-container'>
+                    <h2 className='mb-3'>Testimonials</h2>
+                    <Row className='gy-5'>
+                      {
+                          reviews.map(review => <Review
+                          key={review.id}
+                          review ={review}
+                          ></Review>)
+                      }
+                    </Row>
+                  </div>
+                </Container>
       </section>
     </div>
   );

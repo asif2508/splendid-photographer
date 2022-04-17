@@ -11,6 +11,10 @@
 .services-section{
     margin-bottom: 100px;
 }
+.testimonials{
+    margin-bottom: 80px;
+    margin-top: 20px;
+}
 
 @media screen and (max-width:576px) {
     .banner-img{
