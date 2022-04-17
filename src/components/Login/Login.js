@@ -14,7 +14,7 @@ const Login = () => {
                     <Col xs={12} md={5} lg={5}>
                         <div className="login-style">
                             <h3 className='text-center'>Login</h3>
-                            <Form className='w-75 mx-auto'>
+                            <Form className='w-75 mx-auto form-style'>
                                 <Form.Floating className="mb-3">
                                     <Form.Control
                                         id="floatingInputCustom"

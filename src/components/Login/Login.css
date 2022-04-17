@@ -31,3 +31,12 @@
 .link-style:hover{
     color: rgb(245, 11, 23);
 }
+
+@media screen and (max-width: 576px) {
+    .login-style{
+        width: 100% !important;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+}
