@@ -10,7 +10,7 @@ const Home = () => {
   const [services, setServices] = useServices()
   return (
     <div id='home'>
-      <section className='banner'>
+      <section className='banner mt-2'>
         <Container fluid>
           <Carousel variant="light">
             <Carousel.Item>

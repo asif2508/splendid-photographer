@@ -6,7 +6,7 @@ import './Header.css';
 const Header = () => {
     return (
         <div>
-            <Navbar bg="primary" variant='dark' expand="lg">
+            <Navbar className='nav-style' variant='dark' expand="lg">
                 <Container>
                     <Navbar.Brand href="#home" className='logo'>Splendid Photographer</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
