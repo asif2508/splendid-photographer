@@ -27,11 +27,12 @@
 }
 .link-style{
     color: rgb(37, 17, 104);
-    border: 0;
+    border: 0 !important;
     
 }
 .link-style:hover{
     color: rgb(245, 11, 23);
+    border: 0 !important;
 }
 
 @media screen and (max-width: 576px) {

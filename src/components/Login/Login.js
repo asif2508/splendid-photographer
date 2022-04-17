@@ -1,4 +1,4 @@
-import React, { useRef} from 'react';
+import React, { useRef, useState} from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css';
 import {Link, useNavigate} from 'react-router-dom';
@@ -19,6 +19,7 @@ const Login = () => {
       const navigate = useNavigate();
       const emailRef = useRef('');
       const passwordRef = useRef('');
+      const [message, setMessage] = useState('');
       if(loading){
           return <Loading></Loading>
       }
@@ -41,7 +42,7 @@ const Login = () => {
             toast("Password reset email sent!")
         }
         else{
-            toast("Enter your email!");
+            setMessage("Enter your email!");
         }
 
     }
@@ -77,6 +78,7 @@ const Login = () => {
                                     <label htmlFor="floatingPasswordCustom">Password</label>
                                 </Form.Floating>
                                 {error && <p className='text-start text-danger'>{error.message}</p> }
+                                {message && <p className='text-start text-danger'>{message}</p> }
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <Form.Group className="" controlId="formBasicCheckbox">
                                         <Form.Check type="checkbox" label="Remember me" />
