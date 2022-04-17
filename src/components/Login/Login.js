@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef} from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css';
 import {Link, useNavigate} from 'react-router-dom';
@@ -15,23 +15,27 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-
-      const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
-      const navigate = useNavigate()
+      const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+      const navigate = useNavigate();
+      const emailRef = useRef('');
+      const passwordRef = useRef('');
       if(loading){
           return <Loading></Loading>
       }
       if(user){
           navigate('/home');
       }
+      
     const handleSignIn =async event =>{
-        const email = event.target.email.value;
-        const password = event.target.password.value;
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
     }
 
-    const handlePasswordReset = async (event) =>{
-        const email = event.target.email.value;
+    const handlePasswordReset = async event =>{
+        event.preventDefault();
+        const email = emailRef.current.value;
         if(email){
             await sendPasswordResetEmail(email);
             toast("Password reset email sent!")
@@ -54,9 +58,9 @@ const Login = () => {
                             <Form onSubmit={handleSignIn} className='w-75 mx-auto form-style'>
                                 <Form.Floating className="mb-3">
                                     <Form.Control
+                                        ref={emailRef}
                                         id="floatingInputCustom"
                                         type="email"
-                                        name="email"
                                         placeholder="name@example.com"
                                         required
                                     />
@@ -66,7 +70,7 @@ const Login = () => {
                                     <Form.Control
                                         id="floatingPasswordCustom"
                                         type="password"
-                                        name="password"
+                                        ref={passwordRef}
                                         placeholder="Password"
                                         required
                                     />
