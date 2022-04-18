@@ -1,0 +1,12 @@
+.about-me{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 25px;
+}
+.about-me p{
+    font-family: cursive;
+    font-size: 24px;
+}
+.about-style{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
