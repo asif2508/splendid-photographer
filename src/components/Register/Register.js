@@ -1,7 +1,6 @@
-import { sendEmailVerification } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Container, FloatingLabel, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithFacebook, useSignInWithGoogle, useSignInWithGithub, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
@@ -21,7 +20,7 @@ const Register = () => {
     const navigate = useNavigate()
     const [message, setMessage] = useState('');
     const [signInWithGoogle] = useSignInWithGoogle(auth);
-    const [signInWithTwitter] = useSignInWithTwitter(auth);
+    const [signInWithGithub] = useSignInWithGithub(auth);
     const [signInWithFacebook] = useSignInWithFacebook(auth);
     if (loading || updating) {
         return <Loading></Loading>
@@ -63,8 +62,8 @@ const Register = () => {
             signInWithFacebook();
 
         };
-        const handleSignInWithTwitter = () => {
-            signInWithTwitter();
+        const handleSignInWithGithub = () => {
+            signInWithGithub();
         };
     return (
         <div>
@@ -98,7 +97,7 @@ const Register = () => {
                     <Social
                         handleSignInWithGoogle={handleSignInWithGoogle}
                         handleSignInWithFacebook={handleSignInWithFacebook}
-                        handleSignInWithTwitter={handleSignInWithTwitter}
+                        handleSignInWithGithub={handleSignInWithGithub}
                     ></Social>
                 </div>
             </Container>
