@@ -11,7 +11,7 @@ const Service = (props) => {
     return (
         <Col xs={12} md={4} lg={4}>
             <Card className='card-style'>
-                <Card.Img variant="top" src={img} />
+                <Card.Img variant="top" src={img} height={236} width={354}/>
                 <Card.Body className='card-body'>
                     <Card.Title><h3>{plan}</h3></Card.Title>
                     <Card.Text>

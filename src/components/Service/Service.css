@@ -7,14 +7,14 @@
 }
 .card-style:hover{
     background-color: rgba(255, 0, 0, 0.856);
-    transition: all 2s ease-in-out;
+    transition: all 1s ease-in-out;
     transform: scale(1.01);
-    transition: all 2s ease-out;
+    transition: all 1s ease-out;
     
 }
 .card-style:hover .card-body,.sign-icon{
     color: white;
-    transition: all 2s ease-in;
+    transition: all 1s ease-in;
 }
 .card-style:hover .sign-icon{
     color: white;

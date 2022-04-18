@@ -23,7 +23,7 @@ const Social = (props) => {
             </div>
             <div className='d-flex justify-content-around'>
                 <div><FontAwesomeIcon onClick={handleSignInWithGoogle}  className='fs-5 logo-backgound' icon={faGoogle}></FontAwesomeIcon> </div>
-                <div><FontAwesomeIcon  onClick={handleSignInWithFacebook}className='fs-5 logo-backgound' icon={faFacebook}></FontAwesomeIcon></div>
+                {/* <div><FontAwesomeIcon  onClick={handleSignInWithFacebook}className='fs-5 logo-backgound' icon={faFacebook}></FontAwesomeIcon></div> */}
                 <div><FontAwesomeIcon  onClick={handleSignInWithGithub} className='fs-5 logo-backgound' icon={faGithub}></FontAwesomeIcon></div>
             </div>
         </div>
