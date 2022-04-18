@@ -1,7 +1,7 @@
 import { sendEmailVerification } from 'firebase/auth';
 import React, { useState } from 'react';
-import {Container, FloatingLabel, Form} from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { Container, FloatingLabel, Form } from 'react-bootstrap';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
@@ -15,45 +15,57 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const [sendEmailVerification, sending, error2] = useSendEmailVerification(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [sendEmailVerification, sending, error2] = useSendEmailVerification(auth);
     const [updateProfile, updating, error1] = useUpdateProfile(auth);
     const navigate = useNavigate()
     const [message, setMessage] = useState('');
-    if(loading || updating){
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithTwitter] = useSignInWithTwitter(auth);
+    const [signInWithFacebook] = useSignInWithFacebook(auth);
+    if (loading || updating) {
         return <Loading></Loading>
     }
-    if(user){
+    if (user) {
         navigate('/home');
-        
-        
+
+
     }
-    if(sending){
+    if (sending) {
         toast("Verification email has been sent!");
     }
-    
-    const handleCreateUser =async event =>{
+
+    const handleCreateUser = async event => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        const ConfirmPassword  = event.target.ConfirmPassword.value;
-        if(password.length < 6){
+        const ConfirmPassword = event.target.ConfirmPassword.value;
+        if (password.length < 6) {
             setMessage("Password's length must be 6")
         }
-        else{
-            if(password === ConfirmPassword){
-                if(!user){
+        else {
+            if (password === ConfirmPassword) {
+                if (!user) {
                     await createUserWithEmailAndPassword(email, password);
-                    await updateProfile({displayName: name});
+                    await updateProfile({ displayName: name });
                     await sendEmailVerification();
                 };
             }
-            else{
+            else {
                 setMessage("Passwords didn't match");
             }
-        }
-    }
+        }};
+        const handleSignInWithGoogle = () => {
+            signInWithGoogle();
+        };
+        const handleSignInWithFacebook = () => {
+            signInWithFacebook();
+
+        };
+        const handleSignInWithTwitter = () => {
+            signInWithTwitter();
+        };
     return (
         <div>
             <Container fluid className='register-page'>
@@ -83,7 +95,11 @@ const Register = () => {
                         <button className='w-100 mt-3 login-btn' type="submit">Register</button>
                     </form>
                     <p className='text-start m-2'>Already have an account?<Link className='text-primary ms-1 fw-bold' to='/login'>Login</Link> </p>
-                    <Social></Social>
+                    <Social
+                        handleSignInWithGoogle={handleSignInWithGoogle}
+                        handleSignInWithFacebook={handleSignInWithFacebook}
+                        handleSignInWithTwitter={handleSignInWithTwitter}
+                    ></Social>
                 </div>
             </Container>
             <ToastContainer />
