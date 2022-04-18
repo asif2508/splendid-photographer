@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import Social from '../Social/Social';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
@@ -21,7 +21,7 @@ const Login = () => {
       const passwordRef = useRef('');
       const [message, setMessage] = useState('');
       const [signInWithGoogle] = useSignInWithGoogle(auth);
-      const [signInWithTwitter] = useSignInWithTwitter(auth);
+      const [signInWithGithub] = useSignInWithGithub(auth);
       const [signInWithFacebook] = useSignInWithFacebook(auth);
 
       let location = useLocation();
@@ -59,8 +59,8 @@ const Login = () => {
         signInWithFacebook();
         
     }
-    const handleSignInWithTwitter =()=>{
-        signInWithTwitter();
+    const  handleSignInWithGithub =()=>{
+        signInWithGithub();
         
     }
     return (
@@ -110,7 +110,7 @@ const Login = () => {
                             <Social
                             handleSignInWithGoogle ={handleSignInWithGoogle}
                             handleSignInWithFacebook ={handleSignInWithFacebook}
-                            handleSignInWithTwitter ={handleSignInWithTwitter}
+                             handleSignInWithGithub ={ handleSignInWithGithub}
                             ></Social>
                             <ToastContainer />
                         </div>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {} from '@fortawesome/free-solid-svg-icons';
-import {  faFacebook, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {  faFacebook, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Social.css';
 import { useAuthState} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Social = (props) => {
-    const {handleSignInWithGoogle, handleSignInWithFacebook, handleSignInWithTwitter} = props;
+    const {handleSignInWithGoogle, handleSignInWithFacebook,  handleSignInWithGithub} = props;
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     let location = useLocation();
@@ -24,7 +24,7 @@ const Social = (props) => {
             <div className='d-flex justify-content-around'>
                 <div><FontAwesomeIcon onClick={handleSignInWithGoogle}  className='fs-5 logo-backgound' icon={faGoogle}></FontAwesomeIcon> </div>
                 <div><FontAwesomeIcon  onClick={handleSignInWithFacebook}className='fs-5 logo-backgound' icon={faFacebook}></FontAwesomeIcon></div>
-                <div><FontAwesomeIcon  onClick={handleSignInWithTwitter} className='fs-5 logo-backgound' icon={faTwitter}></FontAwesomeIcon></div>
+                <div><FontAwesomeIcon  onClick={handleSignInWithGithub} className='fs-5 logo-backgound' icon={faGithub}></FontAwesomeIcon></div>
             </div>
         </div>
     );
