@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel, Container, Row } from 'react-bootstrap';
 import './Home.css';
-import bannerone from '../../images/banners/banner1_1280x500.jpg'
-import bannertwo from '../../images/banners/banner2_1280x500.jpg'
-import bannerthree from '../../images/banners/banner3_1280x500.jpg'
+import bannerone from '../../images/banners/banner-1.png';
+import bannertwo from '../../images/banners/banner-2.png';
+import bannerthree from '../../images/banners/banner-3.png';
 import useServices from '../../hooks/useServices';
 import Service from '../Service/Service';
 import useReviews from '../../hooks/useReviews';
@@ -20,7 +20,7 @@ const Home = () => {
               <img
                 className="d-block banner-img"
                 width='100%'
-                height={500}
+                height={550}
                 src={bannerone}
                 alt="First slide"
               />
@@ -33,7 +33,7 @@ const Home = () => {
               <img
                 className="d-block banner-img"
                 width='100%'
-                height={500}
+                height={550}
                 src={bannertwo}
                 alt="Second slide"
               />
@@ -46,7 +46,7 @@ const Home = () => {
               <img
                 className="d-block banner-img"
                 width='100%'
-                height={500}
+                height={550}
                 src={bannerthree}
                 alt="Third slide"
               />

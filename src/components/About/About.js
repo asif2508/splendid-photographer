@@ -9,7 +9,7 @@ const About = () => {
             <Container>
                 <Row>
                     <Col xs={12} md={6} lg={6}>
-                        <Image src={me} height={461} width={450}/>
+                        <Image src={me} height={461} width='100%'/>
                     </Col>
                     <Col xs={12} md={6} lg={6}>
                         <div className='about-me'>
